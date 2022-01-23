@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "930222234940",
+    "project_id": "heathcare-b18ce",
+    "storage_bucket": "heathcare-b18ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930222234940:android:c57dc5b1091f79a04cd239",
+        "android_client_info": {
+          "package_name": "com.example.flutter_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930222234940-qqer3lb68as2etksqv0tn6f8ni5jja4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_auth",
+            "certificate_hash": "57d89e5257c492e3fc1ba534da83af5f8ec2453c"
+          }
+        },
+        {
+          "client_id": "930222234940-n3crlvktfvmpec2lpi9rhiibq7avscgs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr_nG6B-c-Yfcc3gcmUn7JrsQlGZc52AA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930222234940-n3crlvktfvmpec2lpi9rhiibq7avscgs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
