@@ -22,8 +22,9 @@ class Body extends StatelessWidget {
   String email = "";
   String _email = "";
   String _password = "";
-  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-  TextEditingController emailcontroller = TextEditingController();
+  static final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  static final TextEditingController emailcontroller = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {

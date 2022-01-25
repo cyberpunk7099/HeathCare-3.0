@@ -4,6 +4,7 @@ import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Welcome/components/body.dart';
 import 'package:flutter_auth/constants.dart';
 import 'package:flutter_auth/home.dart';
+import 'package:flutter_auth/sd/skin.dart';
 import 'package:flutter_auth/symptom/question.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -858,10 +859,13 @@ class _Info23State extends State<Info23> {
   String url = "https://firebasestorage.googleapis.com/v0/b/heathcare-b18ce.appspot.com/o/Skin%2Facne.PNG?alt=media&token=9c4c7c85-81cb-4401-aec0-9b21308be5d0";
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Skin()));
+              }),
           centerTitle: true,
           backgroundColor: kPrimaryColor,
           title: Text('Acne', style: TextStyle(fontSize: 25)),
@@ -879,7 +883,7 @@ class _Info23State extends State<Info23> {
             ],
           ),
         ),
-      ),
+
     );
   }
 
@@ -894,10 +898,13 @@ class _Info24State extends State<Info24> {
   String url = "https://firebasestorage.googleapis.com/v0/b/heathcare-b18ce.appspot.com/o/Skin%2Fcold%20sore.PNG?alt=media&token=1cf3879f-7b1c-4939-894b-3095b6186db2";
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Skin()));
+              }),
           centerTitle: true,
           backgroundColor: kPrimaryColor,
           title: Text('Cold Sore', style: TextStyle(fontSize: 25)),
@@ -915,7 +922,7 @@ class _Info24State extends State<Info24> {
             ],
           ),
         ),
-      ),
+
     );
   }
 
@@ -930,10 +937,13 @@ class _Info25State extends State<Info25> {
   String url = "https://firebasestorage.googleapis.com/v0/b/heathcare-b18ce.appspot.com/o/Skin%2Feczema.PNG?alt=media&token=0dc6d7d8-5c53-4af9-8639-7904015a279c";
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Skin()));
+              }),
           centerTitle: true,
           backgroundColor: kPrimaryColor,
           title: Text('Eczema', style: TextStyle(fontSize: 25)),
@@ -951,7 +961,7 @@ class _Info25State extends State<Info25> {
             ],
           ),
         ),
-      ),
+
     );
   }
 

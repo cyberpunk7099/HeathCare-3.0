@@ -9,6 +9,8 @@ import 'package:flutter_auth/sd//classifier_float.dart';
 import 'package:logger/logger.dart';
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 
+import '../BottomNavigation.dart';
+
 class Skin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -71,6 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> BottomNavigation()));
+            }),
         title: Text('Skin Infection Analyser',
             style: TextStyle(color: Colors.white)),
         backgroundColor: kPrimaryColor,
@@ -115,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 8,
           ),
           Text(
-            category != null ? 'Confidence: ${category!.score * 100}%' : '',
+            category != null ? 'Confidence: ${(category!.score * 100.0).toStringAsFixed(2)}%' : '',
             style: TextStyle(fontSize: 16),
           ),
         ],

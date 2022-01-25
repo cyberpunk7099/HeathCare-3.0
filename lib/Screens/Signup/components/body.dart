@@ -16,6 +16,8 @@ import 'package:flutter_auth/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../../../shared.dart';
+
 class Body extends StatelessWidget {
   @override
   String _email = "";
@@ -24,8 +26,9 @@ class Body extends StatelessWidget {
   static const kPrimaryColor = Color(0xFF6F35A5);
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmpassword = TextEditingController();
-  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  static final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
+@override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
@@ -159,7 +162,12 @@ class Body extends StatelessWidget {
               ),
               RoundedButton(
                 text: "SIGNUP",
-                press: () {
+                press: () async{
+
+                  await UserSimplePreferences.setUsername(name);
+                  await UserSimplePreferences.setEmail(_email);
+
+
                   if (_formkey.currentState!.validate()) {
                     print("successful");
                     print("+++++++++++++" + _email);
@@ -187,14 +195,9 @@ class Body extends StatelessWidget {
               AlreadyHaveAnAccountCheck(
                 login: false,
                 press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return LoginScreen();
-                      },
-                    ),
-                  );
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  LoginScreen()));
                 },
               ),
             ],

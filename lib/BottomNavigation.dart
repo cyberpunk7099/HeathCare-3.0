@@ -7,6 +7,7 @@ import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_auth/home.dart';
 import 'package:flutter_auth/news.dart';
 import 'package:flutter_auth/pedometer.dart';
+import 'package:flutter_auth/shared.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -59,7 +60,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
               icon: Icon(Icons.home_filled),
             ),
             BottomNavigationBarItem(
-              label: 'Finess',
+              label: 'Fitness',
               icon: Icon(Icons.fitness_center),
             ),
             BottomNavigationBarItem(
@@ -280,10 +281,14 @@ class _Screen3State extends State<Screen3> {
   }
 
   String mail = '';
+  String name = '';
   @override
   void initState() {
-    getName().then(updateName);
+
     super.initState();
+    name = UserSimplePreferences.getUsername() ?? '';
+    mail = UserSimplePreferences.getEmail() ?? '';
+
   }
 
   Future logout() async {
@@ -301,8 +306,8 @@ class _Screen3State extends State<Screen3> {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Chetan',style: TextStyle(color: Colors.black,fontSize: 20),),
-            accountEmail: Text("cyberpunk7099@gmail.com",style: TextStyle(color: Colors.black,fontSize: 15),),
+            accountName: Text('$name',style: TextStyle(color: Colors.black,fontSize: 20),),
+            accountEmail: Text("$mail",style: TextStyle(color: Colors.black,fontSize: 15),),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child : Icon(
@@ -362,9 +367,5 @@ class _Screen3State extends State<Screen3> {
     );
   }
 
-  void updateName(String email) {
-    setState(() {
-      this.mail = email;
-    });
-  }
+
 }

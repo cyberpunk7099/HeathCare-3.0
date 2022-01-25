@@ -9,6 +9,7 @@ import 'package:flutter_auth/constants.dart';
 
 import 'package:flutter_auth/pedometer.dart';
 import 'package:flutter_auth/sd/skin.dart';
+import 'package:flutter_auth/shared.dart';
 import 'package:flutter_auth/symptom/checker.dart';
 import 'package:flutter_auth/symptom/info.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -26,6 +27,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   String? email = "";
+  String name = '';
 
   @override
   Future getEmail() async {
@@ -46,6 +48,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     getEmail();
+    name = UserSimplePreferences.getUsername() ?? '';
   }
 
   void sad(){
@@ -61,9 +64,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text('HealthCare'),
           backgroundColor: kPrimaryColor,
           actions: <Widget>[
@@ -106,7 +109,7 @@ class _HomeState extends State<Home> {
                       Row(
                         children:[
                           Text("Hello,",style: GoogleFonts.poppins(textStyle:TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.white)),),
-                          Text(" Chetan ",style: GoogleFonts.poppins(textStyle:TextStyle(fontSize: 30,fontWeight: FontWeight.normal,color: Colors.white)),)
+                          Text(" $name ",style: GoogleFonts.poppins(textStyle:TextStyle(fontSize: 30,fontWeight: FontWeight.normal,color: Colors.white)),)
 
                         ]
                       ),
@@ -365,7 +368,7 @@ class _HomeState extends State<Home> {
       //     ),
       //   ],
       // )
-    ));
+    );
   }
 }
 
